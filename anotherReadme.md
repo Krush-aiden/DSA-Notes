@@ -1,4 +1,7 @@
-All Data structure & Algorithm Notes
+# All Data structure & Algorithm Notes
 
-famouse language in Github :
-![famouse language in Github](language.png)
+## Hello
+
+## Language stats 2024
+
+![Language stats](language.png)
