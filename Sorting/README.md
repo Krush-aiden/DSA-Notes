@@ -1,3 +1,3 @@
 # Sorting
 
-Website: [Sorting comparision](https://www.toptal.com/developers/sorting-algorithms)
+Website : [Sorting comparision](https://www.toptal.com/developers/sorting-algorithms)
