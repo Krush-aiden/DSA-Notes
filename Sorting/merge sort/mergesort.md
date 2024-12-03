@@ -4,7 +4,7 @@
 
 [W3school Note](https://www.w3schools.com/dsa/dsa_algo_mergesort.php)
 
-[merge Sort code](selectionsort.js)
+[merge Sort code](mergesort.js)
 
 [Merge Sort Visual Algo](https://visualgo.net/en/sorting)
 
