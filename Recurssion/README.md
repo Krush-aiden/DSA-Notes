@@ -12,16 +12,6 @@ The process in which a function calls itself directly or indirectly is called re
 
 Recursion is an amazing technique with the help of which we can reduce the length of our code and make it easier to read and write. It has certain advantages over the iteration technique which will be discussed later. A task that can be defined with its similar subtask, recursion is one of the best solutions for it. For example; The Factorial of a number.
 
-### What is Stack Overflow in Recursion?
-
-Whenever recursion calls are executed, they’re simultaneously stored in a recursion stack where they wait for the completion of the recursive function. A recursive function can only be completed if a base condition is fulfilled and the control returns to the parent function. 
-
-But, when there is no base condition given for a particular recursive function, it gets called indefinitely which results in a Stack Overflow i.e, exceeding the memory limit of the recursion stack and hence the program terminates giving a Segmentation Fault error. 
-
-The illustration above also represents the case of a Stack Overflow as there is no terminating condition for recursion to stop, hence it will also result in a memory limit exceeded error.
-
-![stack-overflow](https://static.takeuforward.org/wp/uploads/2023/02/image-4.png)
-
 ### Properties of Recursion
 
 Performing the same operations multiple times with different inputs.
@@ -33,11 +23,45 @@ Algorithm: Steps
 
 **Step2** – Define a **recursive case:** Define the problem in terms of smaller subproblems. Break the problem down into smaller versions of itself, and call the function recursively to solve each subproblem.
 
-**Step3** – Ensure the **recursion terminates:** Make sure that the recursive function eventually reaches the **base case**, and does not enter an infinite loop which is called as **Stack Overflow** (which is explained above).
+**Step3** – Ensure the **recursion terminates:** Make sure that the recursive function eventually reaches the **base case**, and does not enter an infinite loop which is called as **Stack Overflow**.
 
 **step4** – **Combine the solutions:** Combine the solutions of the subproblems to solve the original problem.
 
-#### Recursion Problem Explain with Diagram Below
+### What is Stack Overflow in Recursion?
+
+Whenever recursion calls are executed, they’re simultaneously stored in a recursion stack where they wait for the completion of the recursive function. A recursive function can only be completed if a base condition is fulfilled and the control returns to the parent function. 
+
+But, when there is no base condition given for a particular recursive function, it gets called indefinitely which results in a Stack Overflow i.e, exceeding the memory limit of the recursion stack and hence the program terminates giving a Segmentation Fault error. 
+
+The illustration above also represents the case of a Stack Overflow as there is no terminating condition for recursion to stop, hence it will also result in a memory limit exceeded error.
+
+![stack-overflow](https://static.takeuforward.org/wp/uploads/2023/02/image-4.png)
+
+### Base Condition
+
+It is the condition that is written in a recursive function in order for it to get completed and not to run infinitely. After encountering the base condition, the function terminates and returns back to its parent function simultaneously.
+
+To get a better understanding of how the base condition is an integral part of recursive functions, let us see an example below :
+
+Let’s say we have to print integers starting from 0 till 2 only, this will be how the pseudocode for it will look like
+
+```javascript
+function fact(n) {
+
+    // BASE CONDITION
+    if (n === 0 || n === 1)
+        return 1;
+    
+    return n * fact(n - 1);
+}
+
+console.log("Factorial of 5 : " + fact(5));
+```
+
+### How memory is allocated to different function calls in recursion?
+
+When any function is called from main(), the memory is allocated to it on the stack. A recursive function calls itself, the memory for a called function is allocated on top of memory allocated to the calling function and a different copy of local variables is created for each function call. When the base case is reached, the function returns its value to the function by whom it is called and memory is de-allocated and the process continues.
+Let us take the example of how recursion works by taking a simple function.
 
 ```Javascript
 function printFun(test) {
@@ -106,5 +130,4 @@ for (let i = 0; i < n; i++) {
 | **Heap Sort**                     | `T(n) = O(n log n)`                            | `O(n log n)`        | Builds a heap and performs recursive heapify.              | **Heap Sort**                               |
 | **Tower of Hanoi**                | `T(n) = 2T(n-1) + O(1)`                        | `O(2^n)`            | Exponential recursion due to multiple recursive calls for each disk. | **Tower of Hanoi Problem**                  |
 
-
-[GeeksforGeeks-Notes](https://www.geeksforgeeks.org/introduction-to-recursion-2/)
+[For More In-Depth GeeksforGeeks-Notes](https://www.geeksforgeeks.org/introduction-to-recursion-2/)
