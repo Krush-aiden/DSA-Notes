@@ -58,32 +58,6 @@ function fact(n) {
 console.log("Factorial of 5 : " + fact(5));
 ```
 
-### How memory is allocated to different function calls in recursion?
-
-When any function is called from main(), the memory is allocated to it on the stack. A recursive function calls itself, the memory for a called function is allocated on top of memory allocated to the calling function and a different copy of local variables is created for each function call. When the base case is reached, the function returns its value to the function by whom it is called and memory is de-allocated and the process continues.
-Let us take the example of how recursion works by taking a simple function.
-
-```Javascript
-function printFun(test) {
-    if (test < 1)
-        return;
-    else {
-        console.log(test);
-        printFun(test - 1); // statement 2
-        console.log(test);
-        return;
-    }
-}
-
-// Driver Code
-let test = 3;
-printFun(test);
-
-Output : 3 2 1 1 2 3 
-```
-
-![Recurssion-problem](https://media.geeksforgeeks.org/wp-content/cdn-uploads/recursion.jpg)
-
 ### Recurssion Tree with example
 
 - Here is the recursive tree for input 5 which shows a clear picture of how a big problem can be solved into smaller ones.
@@ -113,6 +87,32 @@ for (let i = 0; i < n; i++) {
 ```
 
 ![RecurssionTree](https://media.geeksforgeeks.org/wp-content/uploads/20191107235734/fib1.jpg)
+
+### How memory is allocated to different function calls in recursion?
+
+When any function is called from main(), the memory is allocated to it on the stack. A recursive function calls itself, the memory for a called function is allocated on top of memory allocated to the calling function and a different copy of local variables is created for each function call. When the base case is reached, the function returns its value to the function by whom it is called and memory is de-allocated and the process continues.
+Let us take the example of how recursion works by taking a simple function.
+
+```Javascript
+function printFun(test) {
+    if (test < 1)
+        return;
+    else {
+        console.log(test);
+        printFun(test - 1); // statement 2
+        console.log(test);
+        return;
+    }
+}
+
+// Driver Code
+let test = 3;
+printFun(test);
+
+Output : 3 2 1 1 2 3 
+```
+
+![Recurssion-problem](https://media.geeksforgeeks.org/wp-content/cdn-uploads/recursion.jpg)
 
 ### Time Complexity
 
