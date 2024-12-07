@@ -13,33 +13,33 @@
 
 ## Hash Table (Basic Concept)
 
-- **Description:** A hash table itself is a fundamental data structure that stores key-value pairs. It uses a hash function to compute an index (hash code) into an array of buckets or slots, from which the desired value can be found. A hash table typically handles collisions using methods like chaining (linked lists) or open addressing (probing).
-- **Use case:** Hash tables are often used to implement associative arrays or databases, where fast lookup of data is necessary.
-- **Languages:** In JavaScript, this is implemented by Map and Set. In some other languages, such as Python, a dictionary is a type of hash table.
+**Description:** A hash table itself is a fundamental data structure that stores key-value pairs. It uses a hash function to compute an index (hash code) into an array of buckets or slots, from which the desired value can be found. A hash table typically handles collisions using methods like chaining (linked lists) or open addressing (probing).
+**Use case:** Hash tables are often used to implement associative arrays or databases, where fast lookup of data is necessary.
+**Languages:** In JavaScript, this is implemented by Map and Set. In some other languages, such as Python, a dictionary is a type of hash table.
 
 ### Hash-Based Data Structures in JavaScript
 
 In JavaScript, the following are the primary hash-based structures:
 
-- **Objects**: Objects in JavaScript can be used as hashmaps, where the keys are unique properties, and the values can be of any data type.
+[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object): `Objects` in JavaScript can be used as hashmaps, where the keys are unique properties, and the values can be of any data type.
+
+[Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map): The `Map` object stores key-value pairs where both keys and values can be of any data type. It is similar to an object but provides better performance for frequent additions and deletions of key-value pairs.
   
-- **Maps**: The `Map` object stores key-value pairs where both keys and values can be of any data type. It is similar to an object but provides better performance for frequent additions and deletions of key-value pairs.
-  
-- **Sets**: The `Set` object stores unique values. It is an unordered collection where each value can only appear once.
+[Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set): The `Set` object stores unique values. It is an unordered collection where each value can only appear once.
 
 Additionally, there are two specialized hash-based structures that provide weak references:
 
-- **WeakMap**: A `WeakMap` is similar to a `Map`, but it holds weak references to its keys. This means that if there are no other references to an object used as a key, the key-value pair can be garbage collected. `WeakMap` is typically used for memory-sensitive situations, like storing metadata about objects without preventing those objects from being garbage collected.
+[WeakMap](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap): A `WeakMap` is similar to a `Map`, but it holds weak references to its keys. This means that if there are no other references to an object used as a key, the key-value pair can be garbage collected. `WeakMap` is typically used for memory-sensitive situations, like storing metadata about objects without preventing those objects from being garbage collected.
 
-- **WeakSet**: A `WeakSet` is similar to a `Set`, but it holds weak references to its values. Like `WeakMap`, if there are no other references to an object stored in the `WeakSet`, it can be garbage collected.
+[WeakSet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet): A `WeakSet` is similar to a `Set`, but it holds weak references to its values. Like `WeakMap`, if there are no other references to an object stored in the `WeakSet`, it can be garbage collected.
 
 ### Collision-Handling Techniques
 
 When working with **custom hash tables** or in low-level programming, managing collisions becomes essential. Two common techniques for collision handling are:
 
-- **Chained Hashing**: In chained hashing, each index in the hash table stores a linked list of entries that hash to the same index. This allows multiple entries to share the same hash value, efficiently handling collisions.
+**Chained Hashing**: In chained hashing, each index in the hash table stores a linked list of entries that hash to the same index. This allows multiple entries to share the same hash value, efficiently handling collisions.
   
-- **Open Addressing**: In open addressing, when a collision occurs, the algorithm searches for the next available slot in the hash table. This can be done using various probing techniques such as linear probing, quadratic probing, or double hashing.
+**Open Addressing**: In open addressing, when a collision occurs, the algorithm searches for the next available slot in the hash table. This can be done using various probing techniques such as linear probing, quadratic probing, or double hashing.
 
 These techniques are particularly relevant when implementing custom hash table structures or when working with lower-level languages that provide more control over memory and data management.
 
