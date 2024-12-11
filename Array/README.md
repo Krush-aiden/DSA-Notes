@@ -63,3 +63,5 @@ console.log(newArr);  // [3, 4, 5]
 | **map**                    | O(n)                  | Creates a new array with the results of applying a function to each element. |
 | **filter**                 | O(n)                  | Creates a new array with elements that pass the test implemented by the provided function. |
 | **reduce**                 | O(n)                  | Applies a function against an accumulator and each element (from left to right) to reduce it to a single value. |
+| **split()**                | O(n)                   | Splits a string into an array of substrings based on a specified separator.               |
+| **join()**                 | O(m)                   | Joins all elements of an array into a single string, with a specified separator.           |
