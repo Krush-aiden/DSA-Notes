@@ -3,7 +3,8 @@
 ## Summary of Important Two Pointer Patterns
 
 - **Two Pointers for Pair/Matching Problems**: Left (from index 0) and right (from index `arr.length - 1`) pointers are typically used in sorted arrays to check pairs or compute values based on comparisons. For unsorted arrays, hashing can be used for better time complexity.
-  
+  - Problem: [Two Sum](https://leetcode.com/problems/two-sum/)
+
 - **Subsequence problems** can be solved with two pointers by moving through both the sequence and the potential subsequence and checking for matches.
   - Problem: [Is Subsequence](https://leetcode.com/problems/is-subsequence/description/)
 
