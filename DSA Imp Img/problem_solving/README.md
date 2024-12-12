@@ -28,4 +28,4 @@
 
 ---
 
-[Poly How To Solve It](PolyaHowToSolveIt.pdf)
+[Poly How To Solve It](https://drive.google.com/file/d/1e-MpXn-0HgKsLzBpMiOQJExLkFLGrZdW/view)
