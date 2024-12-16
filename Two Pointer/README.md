@@ -12,3 +12,6 @@
 
 - **Partitioning/Swapping**: Used for problems like 3-way partitioning or moving elements based on conditions (e.g., Dutch National Flag Problem).
   - Problem: [Sort Colors](https://leetcode.com/problems/sort-colors/description/)
+
+- **Shorting Technique using Multiple Pointer**:
+  - Problem: [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/description/)
