@@ -50,4 +50,21 @@ function binarySearch(arr, n, x) {
 }
 ```
 
-[Binary Search on GeeksforGeeks](https://www.geeksforgeeks.org/binary-search/)
+### Fundamental Questions
+
+ [Arranging Coins](https://leetcode.com/problems/arranging-coins/description/)  
+  Topics: Binary Search, Math
+
+ [Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/description/)  
+  Topics: Two Pointers, Sorting
+
+ [Valid Perfect Square](https://leetcode.com/problems/valid-perfect-square/description/)  
+  Topics: Binary Search, Math
+
+ Upper Bound  
+  Topics: Binary Search
+
+ Lower Bound  
+  Topics: Binary Search
+
+[More about Binary Search on GeeksforGeeks](https://www.geeksforgeeks.org/binary-search/)
