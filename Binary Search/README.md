@@ -50,7 +50,7 @@ function binarySearch(arr, n, x) {
 }
 ```
 
-### Fundamental Questions
+### Fundamental Questions on (Binary Search 1D Arrays)
 
  [Arranging Coins](https://leetcode.com/problems/arranging-coins/description/)  
   Topics: Binary Search, Math
@@ -65,6 +65,12 @@ function binarySearch(arr, n, x) {
   Topics: Binary Search
 
  Lower Bound  
+  Topics: Binary Search
+
+ [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)  
+  Topics: Binary Search
+
+[Count occurrences of a number in a sorted array with duplicates](https://www.geeksforgeeks.org/problems/number-of-occurrence2259/1)  
   Topics: Binary Search
 
 [More about Binary Search on GeeksforGeeks](https://www.geeksforgeeks.org/binary-search/)
