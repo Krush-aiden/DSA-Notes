@@ -43,11 +43,11 @@ There are several types of linked lists:
     }
     ```
 
-## Basic Operations
+## Basic Operations : Single Linked List
 
 A linked list supports several operations:
 
-- **Insertion**: Adding a new node to the list (at the beginning, end, or middle).
+- **Insertion**: Adding a new node to the list (at the beginning).
 
     ```javascript
     function insertAtHead(head, data) {
@@ -102,6 +102,170 @@ A linked list supports several operations:
             current = current.next;
         }
         return false;
+    }
+    ```
+
+## Basic Operations : Double Linked List
+
+- **Insertion**: Adding a new node to the list (at the beginning).
+
+    ```javascript
+   function insertAtHead(head, k) {
+    let newNode = new Node(k);
+
+    // If the list is not empty, update the current head's 'back' pointer to point to the new node
+    if (head !== null) {
+        head.back = newNode;
+    }
+
+    // The new node's next pointer will point to the current head
+    newNode.next = head;
+
+    // The new node becomes the new head of the list
+    return newNode;
+    }
+    ```
+
+- **Insertion**: Adding a new node to the list (at the end).
+
+    ```javascript
+    function insertAtTail(head, k) {
+    let newNode = new Node(k);
+
+    // If the doubly linked list is empty, set 'head' to the new node
+    if (head === null) {
+        return newNode;
+    }
+
+    // Traverse to the end of the doubly linked list
+    let tail = head;
+    while (tail.next !== null) {
+        tail = tail.next;
+    }
+
+    // Connect the new node to the last node in the list
+    tail.next = newNode;
+    newNode.back = tail;
+
+    return head;
+    }
+    ```
+
+- **Deletion**: Delete the tail node in the DD Linked List.
+
+    ```javascript
+    // Function to delete the tail node of the doubly linked list
+    function deleteTail(head) {
+    if (head === null || head.next === null) {
+        // If the list is empty or has only one node, return null
+        return null;
+    }
+
+    let tail = head;
+
+    // Traverse to the last node (tail)
+    while (tail.next !== null) {
+        tail = tail.next;
+    }
+
+    let newTail = tail.back;
+    if (newTail !== null) {
+        newTail.next = null; // Update the next pointer of the new tail node
+    }
+    tail.back = null; // Remove the back pointer of the old tail node
+    
+    // Clean up the deleted node (optional in JS due to garbage collection)
+    tail.next = null;
+
+    return head;
+    }
+    ```
+
+- **Deletion**: Delete any node in the DD Linked List.
+
+    ```javascript
+    function deleteValue(head, value) {
+    if (head == null) return head;  // List is empty, nothing to delete
+
+    let current = head;
+
+    // If the node to be deleted is the head node
+    if (current.data === value) {
+        head = current.next;  // Move head to the next node
+        if (head != null) {
+            head.back = null;  // If the new head exists, update its back pointer
+        }
+        return head;
+    }
+
+    // Traverse the list to find the node to delete
+    while (current != null && current.data !== value) {
+        current = current.next;
+    }
+
+    // If the node is not found
+    if (current === null) {
+        console.log(`Value ${value} not found in the list.`);
+        return head;
+    }
+
+    // If the node is in the middle or the tail
+    if (current.next != null) {
+        current.next.back = current.back;  // Update the next node's back pointer
+    }
+    if (current.back != null) {
+        current.back.next = current.next;  // Update the previous node's next pointer
+    }
+
+    // Clean up the deleted node (optional in JS due to garbage collection)
+    current.next = current.back = null; 
+
+    return head;
+    }
+    ```
+
+- **Reverse**: .
+
+    ```javascript
+   // Function to reverse a doubly linked list
+    function reverseDLL(head) {
+    // Check if the list is empty
+    // or has only one node
+    if (head === null || head.next === null) {
+        // No change is needed;
+        // return the current head
+        return head;
+    }
+    
+    // Initialize a pointer to
+    // the previous node
+    let prev = null; 
+    
+    // Initialize a pointer
+    // to the current node
+    let current = head; 
+
+    // Traverse the linked list
+    while (current !== null) {
+        // Store a reference to
+        // the previous node
+        prev = current.prev;
+
+        // Swap the previous
+        // and next pointers
+        current.prev = current.next;
+        
+         // This step reverses the links
+        current.next = prev;
+
+        // Move to the next node
+        // in the original list
+        current = current.prev; 
+    }
+
+    // The final node in the original
+    // list becomes the new head after reversal
+    return prev.prev;
     }
     ```
 
