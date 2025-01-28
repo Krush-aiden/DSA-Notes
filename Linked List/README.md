@@ -155,27 +155,32 @@ A linked list supports several operations:
 
     ```javascript
     // Function to delete the tail node of the doubly linked list
-    function deleteTail(head) {
-    if (head === null || head.next === null) {
-        // If the list is empty or has only one node, return null
-        return null;
-    }
+    let current = head;
 
-    let tail = head;
+    // If the node to be deleted is the head node
+    if (current.data === value) {
+        head = current.next; // Move head to the next node
+        if (head !== null) {
+            head.back = null; // If new head exists, update its back pointer
+        }
+        return head;
+    }
 
     // Traverse to the last node (tail)
-    while (tail.next !== null) {
-        tail = tail.next;
+     while (current.next !== null) {
+        current = current.next;
     }
-
-    let newTail = tail.back;
-    if (newTail !== null) {
-        newTail.next = null; // Update the next pointer of the new tail node
-    }
-    tail.back = null; // Remove the back pointer of the old tail node
+    console.log('before :',current);
     
-    // Clean up the deleted node (optional in JS due to garbage collection)
-    tail.next = null;
+    // If the node is not found
+    if (current === null) {
+        console.log(`Value ${value} not found in the list.`);
+        return head;
+    }
+    
+    let newTail = current;
+    newTail.back.next = null;
+    current.back = null;
 
     return head;
     }
