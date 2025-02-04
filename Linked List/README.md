@@ -105,6 +105,48 @@ A linked list supports several operations:
     }
     ```
 
+- **Reverse**:
+
+    ```javascript
+        // Function to reverse a linked list
+        // using the 3-pointer approach
+        function reverseLinkedList(head) {
+            
+            // Initialize pointer 'currrent' at
+            // head of the linked list
+            let currrent = head;  
+            
+            // Initialize a pointer 'prev' to null
+            // representing the previous node
+            // (initially none)
+            let prev = null;  
+
+            // Traversing the list, continue until
+            // 'currrent' reaches the end (null)
+            while (currrent !== null) {  
+                // Store the next node in
+                // 'front' to preserve the reference
+                let front = currrent.next;  
+                
+                // Reverse direction of current node's
+                // 'next' pointer to point to 'prev'
+                currrent.next = prev;  
+                
+                // Move 'prev' to the current node,
+                // preparing it for the next iteration
+                prev = currrent;
+                
+                // Move 'currrent' to the 'front' node
+                // (the next node), advancing traversal
+                currrent = front;  
+            }
+
+            // Return the new head of
+            // the reversed linked list
+            return prev;  
+        }
+    ```
+
 ## Basic Operations : Double Linked List
 
 - **Insertion**: Adding a new node to the list (at the beginning).
@@ -229,48 +271,25 @@ A linked list supports several operations:
     }
     ```
 
-- **Reverse**: .
+- **Reverse**:
 
     ```javascript
-   // Function to reverse a doubly linked list
     function reverseDLL(head) {
-    // Check if the list is empty
-    // or has only one node
-    if (head === null || head.next === null) {
-        // No change is needed;
-        // return the current head
-        return head;
-    }
-    
-    // Initialize a pointer to
-    // the previous node
-    let prev = null; 
-    
-    // Initialize a pointer
-    // to the current node
-    let current = head; 
+    if (!head || !head.next) return head; // Empty or single node list
 
-    // Traverse the linked list
-    while (current !== null) {
-        // Store a reference to
-        // the previous node
-        prev = current.prev;
+    let current = head;
+    let temp = null;
 
-        // Swap the previous
-        // and next pointers
+    // Traverse the list and swap next and prev pointers
+    while (current) {
+        temp = current.prev;
         current.prev = current.next;
-        
-         // This step reverses the links
-        current.next = prev;
-
-        // Move to the next node
-        // in the original list
-        current = current.prev; 
+        current.next = temp;
+        current = current.prev;
     }
 
-    // The final node in the original
-    // list becomes the new head after reversal
-    return prev.prev;
+    // After the loop, the current will be null, and the previous node is the new head
+    return temp.prev;
     }
     ```
 
